@@ -10,10 +10,10 @@
   }
 
   function formatMeasurements(item) {
-    var fraction = ingredients.numerator + '/' + ingredients.denominator;
-    var units = lessThanWhole(ingredients.numerator) ? fraction : ingredients.quantity;
+    var fraction = item.numerator + '/' + item.denominator;
+    var units = lessThanWhole(item.numerator) ? fraction : item.quantity;
 
-    return units + ' ' + ingredients.units;
+    return units + ' ' + item.units;
   }
   
   function buildIngredientList(ingredients, list, card) {
