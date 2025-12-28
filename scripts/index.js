@@ -4,6 +4,17 @@
 
   const container = document.body.querySelector('main');
   const ids = Object.keys(entries[0]);
+
+  function lessThanWhole(item) {
+    return !!item;
+  }
+
+  function formatMeasurements(item) {
+    var fraction = ingredients.numerator + '/' + ingredients.denominator;
+    var units = lessThanWhole(ingredients.numerator) ? fraction : ingredients.quantity;
+
+    return units + ' ' + ingredients.units;
+  }
   
   function buildIngredientList(ingredients, list, card) {
     var listItem = document.createElement('li');
@@ -11,7 +22,8 @@
     var quantity = document.createElement('span');
     
     item.textContent = ingredients.name;
-    quantity.textContent =  ingredients.quantity + ' ' + ingredients.units;
+    
+    quantity.textContent =  formatMeasurements(ingredients);
     
     listItem.appendChild(item);
     listItem.appendChild(quantity); 
@@ -95,10 +107,12 @@
     }
 
     var name = findEntryByFieldName("FIELD2");
-    var credit = findEntryByFieldName("FIELD14");
-    var category = findEntryByFieldName("FIELD4");
     var type = findEntryByFieldName("FIELD3");
+    var category = findEntryByFieldName("FIELD4");
+    var time = findEntryByFieldName("FIELD5") + 'hr ' + findEntryByFieldName("FIELD6");
     var description = findEntryByFieldName("FIElD9");
+    var servings = findEntryByFieldName("FIELD10");
+    var credit = findEntryByFieldName("FIELD14");
     var date = findEntryByFieldName("FIELD16");
     var ing = [];
     
