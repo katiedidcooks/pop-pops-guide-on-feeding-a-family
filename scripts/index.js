@@ -4,7 +4,6 @@
 
   const container = document.body.querySelector('main');
   const ids = Object.keys(entries[0]);
-  const search = document.querySelector('#search');
   
   function buildIngredientList(ingredients, list, card) {
     var listItem = document.createElement('li');
@@ -113,7 +112,7 @@
     section.appendChild(subtitle);
     section.appendChild(aside);
 
-    var searchTerms = Object.entries({index, name, credit, category, date, type, ing})
+    var searchTerms = Object.entries({name, credit, category, date, type, ing});
     card.dataset.search = searchTerms;
     card.appendChild(title);    
     card.appendChild(section);
@@ -127,42 +126,5 @@
   }
 
   ids.forEach(buildCard);
-
-
-  var visible = [];
-  
-  function resetCards() {
-    visible.forEach(function(item) {
-      item.setAttribute('hidden', true);
-    });
-
-    visible.length = 0;
-  }
-
-  function filter(string) {
-    var selector = 'article[data-search*="' + string + '" i]'
-    var results = document.body.querySelectorAll(selector);
-
-    resetCards();
-    
-    return results;
-  }
-  
-  function searchRecipes(e) {
-    e.preventDefault();
-    
-    var string = e.target.value;
-    var results = filter(string);
-    
-    results = results.forEach(function(item) {
-      item.removeAttribute('hidden');
-
-      visible.push(item);
-    });
-
-    return results;
-  }
-
-  search.addEventListener('change', searchRecipes);
 
 })();
