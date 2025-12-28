@@ -35,9 +35,12 @@ main > search input {
 }
 
 main > article {
+  position: relative;
   padding: 1em;
   border: 1px solid #000;
   margin: 1em 0px;
+  z-index: 10;
+  background: #fff;
 }
 
 article > section > ul > li {
@@ -48,12 +51,13 @@ article > section > ul > li {
 }
 
 footer {
-  position: relative;
+  position: absolute;
   left: 0;
   bottom: 0;
   right: 0;
   height: 2em;
   width: 100%;
   text-align: center;
-  top: calc(80vh - 6em);
+  top: calc(100% - 5em);
+  z-index: 0;
 }
