@@ -119,7 +119,7 @@
     
     date = formatDate(date);
   
-    title.textContent = name;
+    title.innherHTML = '<span>' + name + '</span><span>#' + index + '</span>';
     subtitle.textContent = type + ' - ' + category;
     aside.innerHTML = !!description.length ? description + '<br/>' : '';
     aside.innerHTML += credit + '<br/>' + date;

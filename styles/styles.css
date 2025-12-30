@@ -44,6 +44,16 @@ main > article {
   background: #fff;
 }
 
+article > h2 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+article > h2 > span {
+  padding-right: 1.5em;
+}
+
 article > section > ul {
   padding: 0 1em;
 }
