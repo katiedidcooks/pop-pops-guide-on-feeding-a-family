@@ -4,9 +4,12 @@
   const search = document.querySelector('#search');
   var visible = [];
 
-  function displayCard(results) {
+  function displayCard(results, string) {
+    var highlighted = '<mark>' + string + '</mark>';
+
     return results.forEach(function(item) {
       item.removeAttribute('hidden');
+      item.innerHTML = item.innerHTML.replace(string, highlighted);
 
       visible.push(item);
     });
@@ -15,6 +18,10 @@
   function resetCards() {
     visible.forEach(function(item) {
       item.setAttribute('hidden', true);
+      item.querySelectorAll('mark').forEach(function(marked) {
+        marked.parentElement.innerHTML = marked.parentElement.textContent.replace('<mark>', '').replace('</mark>', '');
+        return marked;
+      });
     });
 
     visible.length = 0;
@@ -35,7 +42,7 @@
     var string = e.target.value;
     var results = filter(string);
 
-    results = displayCard(results);
+    results = displayCard(results, string);
 
     return results;
   }
