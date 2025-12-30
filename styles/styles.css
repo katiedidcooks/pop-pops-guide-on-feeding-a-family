@@ -44,7 +44,7 @@ main > article {
   background: #fff;
 }
 
-article > h2, article > section > aside {
+article > h2, article > section > h3, article > section > aside {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
