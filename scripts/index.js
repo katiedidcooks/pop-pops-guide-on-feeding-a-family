@@ -61,7 +61,7 @@
   function loadUserComments(item, section) {
     var container = document.createElement('p');
     
-    container.innerHTML = "<hr><q>" + item + "</q><br/><cite>&mdash;Pop-pop</cite>";
+    container.innerHTML = "<hr><q>" + item + "</q><br/><cite>&mdash;Dodo</cite>";
     section.appendChild(container);
 
     return section;
