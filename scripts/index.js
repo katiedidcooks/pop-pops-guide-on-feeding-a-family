@@ -20,12 +20,20 @@
     var listItem = document.createElement('li');
     var item = document.createElement('span');
     var quantity = document.createElement('span');
+    var itemName = ingredients.name;
+    var itemQuan = formatMeasurements(ingredients);
     
-    item.textContent = ingredients.name;
+    if (itemName === 'As follows:') {
+      itemName = ingredients.units;
+      itemQuan = ingredients.name;
+      listItem.style.fontWeight = 'bold';
+    }
     
-    quantity.textContent =  formatMeasurements(ingredients);
+    item.textContent = itemName;
+    
+    quantity.textContent =  itemQuan;
 
-    card.dataset.search += ingredients.name;
+    card.dataset.search += itemName;
     
     listItem.appendChild(item);
     listItem.appendChild(quantity); 
@@ -61,7 +69,7 @@
   function loadUserComments(item, section) {
     var container = document.createElement('p');
     
-    container.innerHTML = "<hr><q>" + item + "</q><br/><cite>&mdash;Dodo</cite>";
+    container.innerHTML = "<hr><q>" + item + "</q><br/><cite>&mdash;Pop-pop</cite>";
     section.appendChild(container);
 
     return section;
