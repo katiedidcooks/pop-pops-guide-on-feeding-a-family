@@ -21,10 +21,11 @@
     var item = document.createElement('span');
     var quantity = document.createElement('span');
     
-    card.dataset.search += ingredients.name;
     item.textContent = ingredients.name;
     
     quantity.textContent =  formatMeasurements(ingredients);
+
+    card.dataset.search += ingredients.name;
     
     listItem.appendChild(item);
     listItem.appendChild(quantity); 
@@ -60,7 +61,7 @@
   function loadUserComments(item, section) {
     var container = document.createElement('p');
     
-    container.textContent = "***" + item + "***";
+    container.innerHTML = "<hr><q>" + item + "</q><br/><cite>&mdash;Pop-pop</cite>";
     section.appendChild(container);
 
     return section;
@@ -110,19 +111,20 @@
     var name = findEntryByFieldName("FIELD2");
     var type = findEntryByFieldName("FIELD3");
     var category = findEntryByFieldName("FIELD4");
-    var time = findEntryByFieldName("FIELD5") + 'hr ' + findEntryByFieldName("FIELD6");
+    var time = findEntryByFieldName("FIELD5") + 'hr ' + findEntryByFieldName("FIELD6") + 'min';
     var description = findEntryByFieldName("FIElD9");
-    var servings = findEntryByFieldName("FIELD10");
+    var servings = findEntryByFieldName("FIELD12");
     var credit = findEntryByFieldName("FIELD14");
+    var rating = findEntryByFieldName("FIELD15");
     var date = findEntryByFieldName("FIELD16");
     var ing = [];
     
     date = formatDate(date);
   
-    title.innherHTML = '<span>' + name + '</span><span>#' + index + '</span>';
-    subtitle.textContent = type + ' - ' + category;
+    title.innerHTML = '<span>' + name + '</span><small>#' + index + '</small>';
+    subtitle.innerHTML = '<span>' + type + '</span> - <small>' + category + '</small>';
     aside.innerHTML = !!description.length ? description + '<br/>' : '';
-    aside.innerHTML += credit + '<br/>' + date;
+    aside.innerHTML += '<span>' + credit + '<br/>' + date + '</span><small>Time: ' + time + '<br/>Serves: ' + servings + '</small>';
 
     section.appendChild(subtitle);
     section.appendChild(aside);

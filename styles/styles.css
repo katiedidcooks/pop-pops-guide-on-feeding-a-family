@@ -44,7 +44,7 @@ main > article {
   background: #fff;
 }
 
-article > h2 {
+article > h2, article > section > aside {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -52,6 +52,12 @@ article > h2 {
 
 article > h2 > span {
   padding-right: 1.5em;
+}
+
+article > section > p > cite {
+  display: block;
+  width: 100%;
+  text-align: end;
 }
 
 article > section > ul {
