@@ -21,6 +21,7 @@
     var item = document.createElement('span');
     var quantity = document.createElement('span');
     
+    card.dataset.search += ingredients.name;
     item.textContent = ingredients.name;
     
     quantity.textContent =  formatMeasurements(ingredients);
