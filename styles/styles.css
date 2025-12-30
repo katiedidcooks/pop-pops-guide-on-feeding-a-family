@@ -54,7 +54,7 @@ article > h2 > span {
   padding-right: 1.5em;
 }
 
-article > section > p > cite {
+article > section > cite {
   display: block;
   width: 100%;
   text-align: end;
