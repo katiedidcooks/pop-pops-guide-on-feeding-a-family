@@ -1,8 +1,9 @@
 'use strict';
 
+var visible = [];
+
 (function() {
   const search = document.querySelector('#search');
-  var visible = [];
 
   function displayCard(results, string) {
     var highlighted = '<mark>' + string + '</mark>';

@@ -105,6 +105,7 @@
 
     var card = document.createElement('article');
     card.setAttribute('hidden', true);
+    card.setAttribute('id', index);
     
     var title = document.createElement('h2');
     var section = document.createElement('section');
