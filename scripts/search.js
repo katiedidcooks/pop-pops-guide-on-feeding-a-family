@@ -49,5 +49,5 @@ var visible = [];
   }
 
   search.addEventListener('change', searchRecipes);
-
+  search.focus();
 })();

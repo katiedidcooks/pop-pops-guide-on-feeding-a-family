@@ -138,7 +138,7 @@
     section.appendChild(subtitle);
     section.appendChild(aside);
 
-    var searchTerms = Object.entries({name, credit, category, date, type, ing});
+    var searchTerms = Object.values({index, name, credit, category, date, type, ing});
     card.dataset.search = searchTerms;
     card.appendChild(title);    
     card.appendChild(section);
