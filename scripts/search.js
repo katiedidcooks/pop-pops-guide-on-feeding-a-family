@@ -49,16 +49,4 @@
 
   search.addEventListener('change', searchRecipes);
 
-  window.addEventListener('DOMContentLoaded', function(e) {
-    const main = Array.from(document.body.querySelector('main').children);
-    const id = window.location.hash.replace('#', '');
-    const search = document.body.querySelector('#search');
-
-    main.forEach(function(item) {
-      const match = item.id === id;
-      match ? displayCard([item], id) : false;
-    });
-
-    search.focus();
-  });
 })();
